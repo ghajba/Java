@@ -90,17 +90,19 @@ public class XSDValidator
                 }
                 catch (SAXException e)
                 {
-                    System.out.println("Reason: " + e.getLocalizedMessage());
+                    System.out.println(xmlFile.getSystemId() + " is invalid");
+                    System.out.println("\tReason: " + e.getLocalizedMessage());
                 }
                 catch(IOException e)
                 {
-                    System.out.println("Reason: " + e.getLocalizedMessage());
+                    System.out.println(xmlFile.getSystemId() + " is invalid");
+                    System.out.println("\tReason: " + e.getLocalizedMessage());
                 }
             }
         }
         catch (SAXException e)
         {
-            System.out.println("Reason: " + e.getLocalizedMessage());
+            System.out.println("Schema creation failed:: " + e.getLocalizedMessage());
         }
     }
 }
