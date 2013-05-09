@@ -1,0 +1,1 @@
+This is a repository for miscellaneous Java applications or just source codes which I develop(ed) and they fit nowhere else in.
