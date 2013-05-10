@@ -1,3 +1,5 @@
+package biz.hahamo.wordpress;
+
 import static java.lang.System.out;
 
 import javax.xml.XMLConstants;
