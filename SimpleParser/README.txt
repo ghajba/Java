@@ -1,0 +1,1 @@
+Simple Text parser for a fixed purpose
