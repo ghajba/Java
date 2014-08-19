@@ -51,5 +51,7 @@ public class JSAPExample {
             System.err.println(jsap.getHelp());
             return;
         }
+
+        System.out.println("You want to save the CSV file to: " + configuration.getString("output path"));
 	}
 }
