@@ -1,0 +1,10 @@
+.DS_Store
+
+target
+.svn
+.settings
+.classpath
+
+.iml
+
+dependency-reduced-pom.xml
