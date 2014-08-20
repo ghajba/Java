@@ -53,5 +53,14 @@ public class JSAPExample {
         }
 
         System.out.println("You want to save the CSV file to: " + configuration.getString("output path"));
+        System.out.println("The name of the file your want to save is: " + configuration.getString("output filename"));
+        System.out.println("Connection timeout is set to: " + configuration.getInt("connection timeout") + " seconds.");
+        if(configuration.getString("proxy host") != null) {
+            System.out.println("The proxy host is: " + configuration.getString("proxy host"));
+            System.out.println("The proxy port was set to: " + configuration.getInt("proxy port"));
+        }
+        else {
+            System.out.println("No proxy configured.");
+        }
 	}
 }
