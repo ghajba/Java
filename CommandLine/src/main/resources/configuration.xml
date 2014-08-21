@@ -1,0 +1,49 @@
+<jsap>
+    <parameters>
+        <unflaggedOption>
+            <id>output path</id>
+            <required>true</required>
+            <help>Output path where the CSV file should be saved. Mandatory.</help>
+        </unflaggedOption>
+        <unflaggedOption>
+            <id>output filename</id>
+            <required>true</required>
+            <help>The name of the resulting CSV file. Mandatory.</help>
+        </unflaggedOption>
+        <flaggedOption>
+            <id>connection timeout</id>
+            <stringParser>
+                <classname>IntegerStringParser</classname>
+            </stringParser>
+            <shortFlag>t</shortFlag>
+            <longFlag>timeout</longFlag>
+            <defaults>30</defaults>
+            <help>Connection timeout in seconds. Optional.</help>
+        </flaggedOption>
+        <flaggedOption>
+            <id>proxy host</id>
+            <shortFlag>h</shortFlag>
+            <longFlag>host</longFlag>
+            <help>Host of the proxy server. Optional. Example: 'http://localhost'</help>
+        </flaggedOption>
+        <flaggedOption>
+            <id>proxy port</id>
+            <stringParser>
+                <classname>IntegerStringParser</classname>
+            </stringParser>
+            <shortFlag>p</shortFlag>
+            <longFlag>port</longFlag>
+            <defaults>8080</defaults>
+            <help>Port of the proxy server. Optional.</help>
+        </flaggedOption>
+        <unflaggedOption>
+            <id>greedy</id>
+            <stringParser>
+                <classname>StringStringParser</classname>
+            </stringParser>
+            <required>false</required>
+            <greedy>true</greedy>
+            <help>This is a greedy option to make life more complicated with swallowing any unflagged option provided but not expected.</help>
+        </unflaggedOption>
+    </parameters>
+</jsap>
