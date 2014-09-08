@@ -1,15 +1,16 @@
 package biz.hahamo.dev.commandLine;
 
+import java.io.IOException;
+
 import com.martiansoftware.jsap.FlaggedOption;
 import com.martiansoftware.jsap.JSAP;
 import com.martiansoftware.jsap.JSAPException;
 import com.martiansoftware.jsap.JSAPResult;
 import com.martiansoftware.jsap.UnflaggedOption;
 
-import java.io.IOException;
-
 public class JSAPExample {
-    public static void main(String... args) throws JSAPException, IOException {
+
+    public static void main(final String... args) throws JSAPException, IOException {
 
         JSAP jsap = new JSAP();
         UnflaggedOption pathOption = new UnflaggedOption("output path").setRequired(true);
@@ -41,7 +42,7 @@ public class JSAPExample {
         JSAPResult configuration = jsap.parse(args);
 
         if (!configuration.success()) {
-            for (java.util.Iterator errs = configuration.getErrorMessageIterator(); errs.hasNext(); ) {
+            for (java.util.Iterator errs = configuration.getErrorMessageIterator(); errs.hasNext();) {
                 System.err.println("ERROR: " + errs.next());
             }
             System.err.println();
