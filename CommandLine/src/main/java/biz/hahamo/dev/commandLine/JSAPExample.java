@@ -8,7 +8,11 @@ import com.martiansoftware.jsap.JSAPException;
 import com.martiansoftware.jsap.JSAPResult;
 import com.martiansoftware.jsap.UnflaggedOption;
 
-public class JSAPExample {
+public final class JSAPExample {
+
+    private JSAPExample() {
+
+    }
 
     public static void main(final String... args) throws JSAPException, IOException {
 
@@ -29,8 +33,8 @@ public class JSAPExample {
 
         UnflaggedOption greedyOption = new UnflaggedOption("other parameters").setStringParser(JSAP.STRING_PARSER)
                 .setGreedy(true).setRequired(false);
-        greedyOption.setHelp("This is a greedy option to make life more complicated with swallowing any unflagged " +
-                "option provided but not expected.");
+        greedyOption.setHelp("This is a greedy option to make life more complicated with swallowing any unflagged "
+                + "option provided but not expected.");
 
         jsap.registerParameter(pathOption);
         jsap.registerParameter(filenameOption);

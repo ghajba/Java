@@ -9,9 +9,13 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-public class CLIExample {
+public final class CLIExample {
 
-    public static void main(final String... args) throws ParseException {
+    private CLIExample() {
+
+    }
+
+    public static void main(final String... args) {
 
         System.out.println("CLIExample is not yet implemented :( \n");
         Options options = new Options();
@@ -25,16 +29,26 @@ public class CLIExample {
 
         outputFile.setRequired(true);
 
-        options.addOption(outputPath);
-        options.addOption(outputFile);
+        // options.addOption(outputPath);
+        // options.addOption(outputFile);
 
         options.addOption("t", "timeout", true, "Connection timeout in seconds. Optional.");
+        options.addOption("h", "host", true, "Host of the proxy server. Optional. Example: 'http://localhost'");
+        options.addOption("p", "port", true, "Port of the proxy server. Optional.");
 
         CommandLineParser parser = new BasicParser();
-        CommandLine cmd = parser.parse(options, args);
+        try {
+            CommandLine cmd = parser.parse(options, args);
+            System.out.println(cmd.getArgList());
 
-        HelpFormatter helpFormatter = new HelpFormatter();
-        helpFormatter.printHelp("java -jar commandLine.jar", options);
+        } catch (ParseException e) {
+            System.err.println(e.getMessage());
+            HelpFormatter helpFormatter = new HelpFormatter();
+            helpFormatter
+                    .printHelp(
+                            "java -jar commandLine.jar <output path> <output filename> [-t|--timeout connection timeout] [-h|--host proxy host] [-p|--port proxy port]",
+                            options);
+        }
+
     }
-
 }
