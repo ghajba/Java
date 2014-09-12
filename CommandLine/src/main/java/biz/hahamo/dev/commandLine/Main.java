@@ -3,6 +3,7 @@ package biz.hahamo.dev.commandLine;
 import java.io.IOException;
 
 import com.martiansoftware.jsap.JSAPException;
+import com.martiansoftware.jsap.UnspecifiedParameterException;
 
 public final class Main {
 
@@ -16,7 +17,8 @@ public final class Main {
         System.out.println("Calling JSAP with your arguments...\n");
         try {
             JSAPExample.main(args);
-        } catch (JSAPException | IOException e) {
+        }
+        catch (JSAPException | IOException e) {
             System.err.println("Well, we ran into an unexpected Exception.");
             e.printStackTrace();
         }
@@ -24,7 +26,8 @@ public final class Main {
         System.out.println("Calling JSAP with your arguments and XML configuration...\n");
         try {
             JSAPWithXML.main(args);
-        } catch (JSAPException | IOException e) {
+        }
+        catch (UnspecifiedParameterException | JSAPException | IOException e) {
             System.err.println("Well, we ran into an unexpected Exception.");
             e.printStackTrace();
         }

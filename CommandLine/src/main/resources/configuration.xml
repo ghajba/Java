@@ -17,7 +17,7 @@
             </stringParser>
             <shortFlag>t</shortFlag>
             <longFlag>timeout</longFlag>
-            <defaults>30</defaults>
+            <defaults>25</defaults>
             <help>Connection timeout in seconds. Optional.</help>
         </flaggedOption>
         <flaggedOption>
