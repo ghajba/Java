@@ -49,12 +49,13 @@ public final class JSAPExample {
             for (java.util.Iterator errs = configuration.getErrorMessageIterator(); errs.hasNext();) {
                 System.err.println("ERROR: " + errs.next());
             }
-            System.err.println();
-            System.err.println("Usage:");
-            System.err.println("\tjava -jar commandLine.jar ");
-            System.err.println("\t\t" + jsap.getUsage());
-            System.err.println();
-            System.err.println(jsap.getHelp());
+            System.err.flush();
+            System.out.println();
+            System.out.println("Usage:");
+            System.out.println("\tjava -jar commandLine.jar ");
+            System.out.println("\t\t" + jsap.getUsage());
+            System.out.println();
+            System.out.println(jsap.getHelp());
             return;
         }
 
