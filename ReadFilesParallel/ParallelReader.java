@@ -3,6 +3,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Example application for BlogPost: http://wp.me/p33TyJ-fr
+ * 
+ * @author GHajba
+ *
+ */
 public class ParallelReader {
 
     public static void main(String[] args) throws IOException {
@@ -62,7 +68,7 @@ public class ParallelReader {
             }
         }
     }
-    
+
     private static void printLine(String line1, String line2) {
         System.out.println((line1 == null ? "" : line1) + " | " + (line2 == null ? "" : line2));
     }
