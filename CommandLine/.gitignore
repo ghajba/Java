@@ -4,6 +4,7 @@ target
 .svn
 .settings
 .classpath
+.checkstyle
 
 .iml
 

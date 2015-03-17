@@ -17,7 +17,9 @@
             </stringParser>
             <shortFlag>t</shortFlag>
             <longFlag>timeout</longFlag>
-            <defaults>30</defaults>
+            <defaults>
+                <string>25</string>
+            </defaults>
             <help>Connection timeout in seconds. Optional.</help>
         </flaggedOption>
         <flaggedOption>
@@ -33,7 +35,9 @@
             </stringParser>
             <shortFlag>p</shortFlag>
             <longFlag>port</longFlag>
-            <defaults>8080</defaults>
+            <defaults>
+                <string>8080</string>
+            </defaults>
             <help>Port of the proxy server. Optional.</help>
         </flaggedOption>
         <unflaggedOption>

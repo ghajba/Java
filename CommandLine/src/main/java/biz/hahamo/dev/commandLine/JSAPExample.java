@@ -1,15 +1,20 @@
 package biz.hahamo.dev.commandLine;
 
+import java.io.IOException;
+
 import com.martiansoftware.jsap.FlaggedOption;
 import com.martiansoftware.jsap.JSAP;
 import com.martiansoftware.jsap.JSAPException;
 import com.martiansoftware.jsap.JSAPResult;
 import com.martiansoftware.jsap.UnflaggedOption;
 
-import java.io.IOException;
+public final class JSAPExample {
 
-public class JSAPExample {
-    public static void main(String... args) throws JSAPException, IOException {
+    private JSAPExample() {
+
+    }
+
+    public static void main(final String... args) throws JSAPException, IOException {
 
         JSAP jsap = new JSAP();
         UnflaggedOption pathOption = new UnflaggedOption("output path").setRequired(true);
@@ -28,8 +33,8 @@ public class JSAPExample {
 
         UnflaggedOption greedyOption = new UnflaggedOption("other parameters").setStringParser(JSAP.STRING_PARSER)
                 .setGreedy(true).setRequired(false);
-        greedyOption.setHelp("This is a greedy option to make life more complicated with swallowing any unflagged " +
-                "option provided but not expected.");
+        greedyOption.setHelp("This is a greedy option to make life more complicated with swallowing any unflagged "
+                + "option provided but not expected.");
 
         jsap.registerParameter(pathOption);
         jsap.registerParameter(filenameOption);
@@ -41,15 +46,16 @@ public class JSAPExample {
         JSAPResult configuration = jsap.parse(args);
 
         if (!configuration.success()) {
-            for (java.util.Iterator errs = configuration.getErrorMessageIterator(); errs.hasNext(); ) {
+            for (java.util.Iterator errs = configuration.getErrorMessageIterator(); errs.hasNext();) {
                 System.err.println("ERROR: " + errs.next());
             }
-            System.err.println();
-            System.err.println("Usage:");
-            System.err.println("\tjava -jar commandLine.jar ");
-            System.err.println("\t\t" + jsap.getUsage());
-            System.err.println();
-            System.err.println(jsap.getHelp());
+            System.err.flush();
+            System.out.println();
+            System.out.println("Usage:");
+            System.out.println("\tjava -jar commandLine.jar ");
+            System.out.println("\t\t" + jsap.getUsage());
+            System.out.println();
+            System.out.println(jsap.getHelp());
             return;
         }
 
