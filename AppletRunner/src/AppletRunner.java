@@ -36,7 +36,7 @@ public class AppletRunner {
             height = DEFAULT_HEIGHT;
         }
 
-        final AppletHolderFrame frame = new AppletHolderFrame(args[0], width, height);
+        final AppletHolder frame = new AppletHolder(args[0], width, height);
         frame.setBounds(10, 10, width, height);
         frame.setVisible(true);
     }

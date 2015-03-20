@@ -11,7 +11,7 @@ import java.net.URL;
  *
  * @author GHajba
  */
-public class AppletHolderFrame extends Frame implements AppletStub {
+public class AppletHolder extends Frame implements AppletStub {
 
     private static final long serialVersionUID = 343169165587847369L;
 
@@ -27,7 +27,7 @@ public class AppletHolderFrame extends Frame implements AppletStub {
      * @param height
      *            the height of the applet
      */
-    public AppletHolderFrame(String appletName, int width, int height) {
+    public AppletHolder(String appletName, int width, int height) {
         super(appletName);
         try {
             final Applet applet = (Applet) Class.forName(appletName).newInstance();
