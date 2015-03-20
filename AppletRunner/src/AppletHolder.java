@@ -15,8 +15,6 @@ public class AppletHolder extends Frame implements AppletStub {
 
     private static final long serialVersionUID = 343169165587847369L;
 
-    private final String text = "";
-
     /**
      * Initializes the applet with the given parameters.
      *
@@ -61,8 +59,8 @@ public class AppletHolder extends Frame implements AppletStub {
 
     @Override
     public String getParameter(String name) {
-        if ("text".equals(name)) {
-            return this.text;
+        if ("password".equals(name)) {
+            return "secret password";
         }
         return null;
     }
